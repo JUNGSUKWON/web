@@ -8,7 +8,7 @@ from base64 import b64encode
 import pandas as pd
 from .models import Table2 #models.py 파일의 Table2클래스, 모델 사용 위해 가져옴
 from .models import Table1 #models.py 파일의 Table1클래스, 모델 사용 위해 가져옴
-
+###fdafefe
 
 
 cursor = connection.cursor() # sql문 수행 위한 cursor 객체
