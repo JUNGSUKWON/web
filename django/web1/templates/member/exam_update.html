@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 데이터 한 개 UPDATE</h3>
+    <hr/>
+    
+    <form action = "/member/exam_update" method = 'post'>
+    <table>
+    <tr>
+        <td> <input type = 'hidden' name = 'no' value = '{{one.no}}'/> </td>
+        <td><input type = 'text' name = 'name' value = '{{one.name}}' /></td>
+            <td><input type = 'text' name ='kor'value = '{{one.kor}}' /></td>
+            <td><input type = 'text' name = 'eng' value = '{{one.eng}}' /></td>
+            <td><input type = 'text' name = 'math' value = '{{one.math}}'/></td>
+            <td><input type = 'text' name = 'classroom' value = '{{one.classroom}}'/></td>
+
+
+       
+    </tr>
+    </table>
+    <input type = 'submit' value = '수정하기'/>
+</body>
+</html>

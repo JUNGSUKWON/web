@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> js_index </title>
+    
+
+</head>
+<body>
+    <h3> js-index </h3>
+    
+    <form action = '/member/insert' method = 'post' id = 'form'>
+        <input type = 'text' name = 'name' id = 'name'/>
+        <input type = 'submit' value = '추가' />
+        <input type = 'submit' id = 'btn_delete' value = '삭제' />
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" > </script>
+    
+    <!--여기서 말하는 콘솔은 크롬--> 
+    <!-- 크롬 주소창에서 로컬호스트주소:포트주소/js_index입력한 뒤에 f12누르면 콘솔창 뜸 -->
+    <script>
+        
+        
+        $(function(){   
+                        //id가 name인 곳을 찾아서, 그 곳에 value 값인 'jquery insert'를 넣어라. 
+                        $('#name').val('jquery insert')
+                        /* id가 btn_delete인 곳을 찾아서 클릭이 되면 
+                        id가 form인 곳을 찾아서 속성이 action인 부분인 곳을 /member/delete로 수행하라 */
+                        $('#btn_delete').click(function(){$('#form').attr('action', '/member/delete')})
+                    }
+
+        )
+        
+    </script>
+
+    
+</body>
+</html>

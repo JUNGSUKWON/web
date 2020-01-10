@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action = "/member/exam_update_all" method = 'post'> {% csrf_token %}
+        <!--일괄 수정버튼을 두번 포스트 해줘야해서 여긴 2번, 즉 t2_update_all을 두번 포스트 해줘야해서...-->
+        <!-- views.py t2_update_all 부분의 if문에다 써먹을 것임 -->
+            <input type = 'hidden' name = 'menu' value = '2'/> 
+        <table border = '0'>
+            {% for one in list %}
+            <tr>
+                <td> <input type = 'text' name = 'no[]' value = '{{one.no}}' readonly /></td>
+                <td> <input type = 'text' name = 'name[]' value = '{{one.name}}' /></td>
+                <td> <input type = 'text' name = 'kor[]' value = '{{one.kor}}' /></td>
+                <td> <input type = 'text' name = 'eng[]' value = '{{one.eng}}' /></td>
+                <td> <input type = 'text' name = 'math[]' value = '{{one.math}}' /></td>
+                <td> <input type = 'text' name = 'classroom[]' value = '{{one.classroom}}' /></td>
+    
+            </tr>
+            {% endfor %}
+        </table>
+    <input type = 'submit' value = '일괄수정' />    
+    </form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=M, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<!-- Bootstrap core CSS -->
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+<link href="/static/css/pricing.css" rel="stylesheet">
+
+
+</head>
+<body>
+    
+    {% include "./menu.html"%}
+    
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Pricing</h1>
+    <p class="lead">Quickly build an effective pricing table for your potential customers with this 
+  Bootstrap example. It’s built with default Bootstrap components and utilities with 
+  little customization.</p>
+
+ 
+  
+
+
+</div>
+
+
+    
+    
+    <!--
+    
+    <h3> member/index 페이지</h3>
+    <hr />
+    
+    
+    {% if not request.session.userid %}
+        <a href = "/member/login"> 로그인 </a>
+        <a href = "/member/join"> 회원가입 </a>
+    {% else %}
+    {{request.session.username}}님 로그인 중 ^_^
+    <a href = "/member/edit"> 회원정보수정 </a>
+    <a href = "/member/delete"> 회원탈퇴 </a>
+    
+    <form action = '/member/delete'>
+        <input type = 'submit' value = '회원탈퇴' />
+    </form>
+    
+    <a href = "/member/logout"> 로그아웃 </a>
+
+    {% endif%}
+
+    -->
+</body>
+</html>

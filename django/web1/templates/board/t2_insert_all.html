@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>t2_insert_all.html</title>
+</head>
+<body>
+    <h3>insert all </h3>
+    <hr/>
+    <form action = "/board/t2_insert_all" method = 'post'>
+    
+    {% csrf_token %}
+        <table border="1">
+    
+        {% for i in 'x'|rjust:'5' %}
+        <tr>
+            <td><input type = 'text' name = 'name[]' value = 'a'/></td>
+            <td><input type = 'text' name ='kor[]' value = '34'/></td>
+            <td><input type = 'text' name = 'eng[]' value = '67'/></td>
+            <td><input type = 'text' name = 'math[]' value = '77'/></td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+    <input type = 'submit' value = '추가'/>
+    <a href = '/board/t2_list'> 목록 </a>
+</form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exam_insert.html</title>
+</head>
+<body>
+    <h1> 실습과제 </h1>
+    <h2> MEMBER_TABLE2 회원을 20명 추가하시오 </h2>
+    <form action = "/member/exam_insert" method = 'post'>
+        {% csrf_token %}
+        <table>
+            
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>강의실</td>
+            
+
+            {% for i in 'x'|rjust:'21' %}
+            <tr>
+                <td><input type = 'text' name = 'name[]' value = 'abc'/></td>
+                <td><input type = 'text' name ='kor[]' value = '34'/></td>
+                <td><input type = 'text' name = 'eng[]' value = '67'/></td>
+                <td><input type = 'text' name = 'math[]' value = '77'/></td>
+                <td><input type = 'text' name = 'classroom[]' value = 'abc'/></td>
+
+            </tr>
+            {% endfor %}
+    
+        </table>
+        <input type = 'submit' value = '추가'/>
+        <a href = '/member/exam_list'> 목록 </a>
+    
+    
+    </form>
+    
+</body>
+</html>

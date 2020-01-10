@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action = "/member/edit" method = "post">
+    아이디 <input type = "text" name = 'id' value = "{{one.0}}" readonly />
+    이름 <input type = "text" name = 'name' value = "{{one.2}}"  />
+    나이 <input type = "text"  name = 'age' value = "{{one.3}}" />
+
+    <input type = "submit" value = "정보 수정" /> 
+    </form>
+</body>
+</html>

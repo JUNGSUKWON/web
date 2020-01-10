@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/member/exam_select" method = 'get'>
+        <input type = 'text' name = 'txt'/>
+        <input type = 'submit' value = '검색'/>
+
+    </form> 
+    
+    
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>강의실</th>
+            <th></th>
+        </tr>
+        {% for row in list %}
+        <tr>
+            <td>{{row.name}}</td>
+            <td>{{row.kor}}</td>
+            <td>{{row.eng}}</td>
+            <td>{{row.math}}</td>
+            <td>{{row.classroom}}</td>
+            <td>
+                <a href="/member/exam_update?no={{row.no}}">수정</a>
+                <a href="/member/exam_delete?no={{row.no}}">삭제</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% for i in pages %}
+    <a href = '/member/exam_select?page={{i}}&txt={{request.GET.txt}}'> {{i}} </a>
+    {% endfor %}
+
+</body>
+</html>

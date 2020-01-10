@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action = '/member/exam_update_all' method = 'POST'> {% csrf_token %}
+        <!--일괄 수정버튼을 두번 포스트 해줘야해서 여긴 1번, 즉 t2_update_all을 두번 포스트 해줘야해서...-->
+        <input type = 'hidden' name = 'menu' value = '1'/> 
+    
+        <table border = '1'>
+        {% for one in list %}
+    
+        <tr>
+            <td> <input type = 'checkbox' value = '{{one.no}}' name = 'chk[]'/> {{one.no}} </td>
+            <td> {{one.name}} </td>
+            <td> {{one.kor}} </td>
+            <td> {{one.eng}} </td>
+            <td> {{one.math}} </td>
+            <td> {{one.classroom}} </td>
+            <td> {{one.regdate}} </td>
+            <td>
+                <a href = '/member/exam_delete?no={{one.no}}'> 삭제 </a>
+                <a href = '/member/exam_update?no={{one.no}}'> 수정 </a>
+                
+            
+            </td>
+        </tr>
+    
+        {% endfor %}
+    </table>
+    <input type = 'submit' value = '일괄수정' />
+    <a href = '/member/exam_insert'> 추가 </a>
+    <a href = '/member/exam_list'> 목록 </a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>★게시판 목록★</title>
+    <link rel = "stylesheet" href = "/static/css/bootstrap.css" />
+</head>
+<body>
+{% autoescape off%}
+    <div class = 'container'>
+        <h3> ★게시판 목록★ </h3>
+    <form action="/member/select" method = 'get'>
+        <div class = 'form-inline row justify-content-end' style = "margin-top: 5px; margin-bottom:5px;">
+        
+            <select class = 'form-control'>
+                <option> 제목 </option>  
+            </select>&nbsp;
+
+            <input type = 'text' class = 'form-control' name = 'txt' placeholder="검색어"/>&nbsp;
+            <input type = 'submit' class = 'btn btn-success' value="검색"/>
+        
+        </div>
+    </form> 
+    
+    
+    <table class = 'table'>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+            <th>조회수</th>
+            
+        </tr>
+        {% for one in abc %}
+        <tr>
+            <td>{{one.no}}</td>
+            <td>{{one.title}}</td>
+            <td>{{one.content}}</td>
+            <td>{{one.writer}}</td>
+            <td>{{one.hit}}</td>
+            
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {% for i in pages %}
+    <a href = '/board/select?page={{i}}&txt={{request.GET.txt}}'> {{i}} </a>
+    {% endfor %}
+
+    {% endautoescape%}
+</body>
+</html>
+

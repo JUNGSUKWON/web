@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-e quiv="X-UA-Compatible" content="ie=edge">
+    <title>★게시판 목록★</title>
+    <link rel = "stylesheet" href = "/static/css/bootstrap.css" />
+</head>
+<body>
+{% autoescape off%}
+    <div class = "container">
+        <h3> ★게시판 목록★ </h3>
+        <a href = '/board/write' class = 'btn btn-primary'>글쓰기</a> 
+
+        <!-- row justify-content-end는 오른쪽 정렬-->
+        <div class = 'form-inline row justify-content-end' style = "margin-top: 5px; margin-bottom:5px;">
+            <!-- select 태그는 comboBox 만들어 주는 듯....-->
+            <select class = 'form-control'>
+                <option> 제목 </option> 
+                <option> 내용 </option> 
+                <option> 작성자 </option> 
+            </select>&nbsp; <!-- &nbsp;는 스페이스바 기능 -->
+            <input type = 'text' class = 'form-control' placeholder="검색어"/>&nbsp;
+            <input type = 'submit' class = 'btn btn-success' value="검색"/>
+        
+        </div>
+        
+        <!-- table은 표 태그-->
+        <table class = 'table'> 
+            <!-- tr 태그는 표 안에 행 하나 생성-->
+            <tr>
+                <!-- th 태그는 행 안에 제목 열 표시-->
+                <th>번호</th>
+                <th>제목</th>
+                <th>내용</th>
+                <th>작성자</th>
+                <th>조회수</th>
+            </tr>
+            
+            
+            {% for one in abc %}
+            <tr>
+                <!-- td태그는 표의 실제 내용을 갖는 열을 표시-->
+                <td>{{one.0}}</td>
+                <td> <a  href = "/board/content?no={{one.0}}"> {{one.1}} </a> </td>
+                <td>{{one.2}}</td>
+                <td>{{one.3}}</td>
+                <td>{{one.4}}</td>
+                
+                
+            </tr>
+        
+            {% endfor %}
+        </table>
+        <div class = 'row justify-content-center'>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                {% for i in pages %}
+                    <li class="page-item"><a class="page-link" href="#">{{i}}</a></li>
+                {% endfor %}
+                 </ul>
+            </nav>
+            </div>
+                
+{% endautoescape%}
+</body>
+</html>
